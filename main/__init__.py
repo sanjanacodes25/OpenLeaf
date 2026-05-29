@@ -35,3 +35,8 @@ from main.mmain.routes import mmain
 app.register_blueprint(users)
 app.register_blueprint(posts)
 app.register_blueprint(mmain)
+
+from main.models import User, Post
+
+with app.app_context():
+    db.create_all()
